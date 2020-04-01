@@ -10,10 +10,7 @@ Module.register('fortune', {
     return wrapper
   },
   socketNotificationReceived: function(notification, payload) {
-    Log.log(this.name + ' received ' + notification)
-    Log.log(payload)
     if (notification === 'FORTUNE_DONE') {
-
       const text = (payload || '')//.replace(/\u000a/g, '<br>')
       this.wrapper.innerText = text
     }

@@ -20,7 +20,6 @@ module.exports = NodeHelper.create({
     const process = spawn('fortune')
     process.stdout.on('data', (data) => {
       const fortune = String.fromCharCode.apply(null, data)
-      console.log('Fortune: ' + fortune)
       this.sendSocketNotification('FORTUNE_DONE', fortune)
     })
   }
